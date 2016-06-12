@@ -1,3 +1,6 @@
-<p>
-  home works!
-</p>
+<h3> current user : {{user}}</h3>
+<div>
+  <a [routerLink]="['./personal']"> Personal Info and Preferences </a><br>
+  <a [routerLink]="['./diet-builder']"> Build Diet for the User </a>
+</div>
+<router-outlet></router-outlet>

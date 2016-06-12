@@ -3,7 +3,7 @@ import {FormBuilder,ControlGroup} from '@angular/common';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-signup',
+  selector: 'user-signup',
   templateUrl: 'signup.component.html',
   styleUrls: ['signup.component.css']
 })

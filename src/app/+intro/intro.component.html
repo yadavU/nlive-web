@@ -1,4 +1,22 @@
-<a [routerLink]="['./login']">Log In </a>
+<!--<a [routerLink]="['./login']">Log In </a><br>
 <a [routerLink]="['./signup']"> Register </a>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet>-->
+<md-card>
+  <md-tab-group>
+    <md-tab>
+      <template md-tab-label>Login</template>
+      <template md-tab-content>
+        <user-login></user-login>
+
+      </template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>Sign Up</template>
+      <template md-tab-content>
+        <user-signup></user-signup>
+
+      </template>
+    </md-tab>
+  </md-tab-group>
+</md-card>

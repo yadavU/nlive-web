@@ -1,0 +1,16 @@
+<form [ngFormModel]="infoForm" (submit)="submitinfoForm()">
+  <input ngControl='name' placeholder="Full name please"><br>
+  <input ngControl='phone' placeholder="phone number here please" type="number"><br>
+  <input ngControl='dob' placeholder="Date of birth"><br>
+  <input ngConrol='address' placeholder="address"><br>
+  <input ngConrol='height' placeholder="height"><br>
+  <select ngConrol='weight'>
+    <option value="lessthanfortyfive">  < 45 </option>
+    <option value="fortytofifty"> 45-56 </option>
+    <option value="fiftytosixty"> 57-68 </option>
+    <option value="seventytoeighty"> 69-80 </option>
+    <option value="eightytoninty"> 81-95 </option>
+    <option value="greaterthannintyfive"> > 95 </option>
+  </select>
+  <button type="submit"> That looks like me </button>
+</form>

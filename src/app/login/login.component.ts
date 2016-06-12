@@ -4,7 +4,7 @@ import {ControlGroup, FormBuilder} from '@angular/common';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-login',
+  selector: 'user-login',
   templateUrl: 'login.component.html',
   styleUrls: ['login.component.css']
 })
@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit {
 
   submitloginForm(){
     console.log(this.loginForm.value);
-    this._router.navigate(['home']);
+    this._router.navigate(['home',{user: this.loginForm.value.email}]);
+    
     /*Stamplay.User.login(this.loginForm.value).then((res)=>{
     if(res.emailVerified){
       this._router.navigate(['home',{data: res})
