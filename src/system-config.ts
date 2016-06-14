@@ -17,7 +17,9 @@ const materialPkgs:string[] = [
   'card',
   'icon',
   'grid-list',
-  'tabs'
+  'tabs',
+  'list',
+  'input'
 ];
 
 materialPkgs.forEach((pkg) => {
@@ -52,6 +54,8 @@ const barrels: string[] = [
   'app/diet-builder',
   'app/info',
   'app/preferences',
+  'app/feed',
+  'app/comment-drop',
   /** @cli-barrel */
 ];
 

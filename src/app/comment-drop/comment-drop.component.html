@@ -1,0 +1,25 @@
+<md-card>
+  <md-card-header>
+
+    <md-card-actions>
+      <button md-button (click)="upVote()">Upvote</button>
+      <button md-button (click)="comment()">post</button>
+      <button md-button (click)="closecommentBox()">cancel</button>
+    </md-card-actions>
+
+  </md-card-header>
+  <md-card-content>
+
+    <md-list>
+      <md-list-item *ngFor="let comment of comments">
+        {{comment.text}}
+      </md-list-item>
+      <md-list-item>
+        <md-input placeholder="Type here">
+
+        </md-input>
+      </md-list-item>
+    </md-list>
+
+  </md-card-content>
+</md-card>

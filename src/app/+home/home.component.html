@@ -1,6 +1,34 @@
 <h3> current user : {{user}}</h3>
-<div>
+<!--<div>
   <a [routerLink]="['./personal']"> Personal Info and Preferences </a><br>
   <a [routerLink]="['./diet-builder']"> Build Diet for the User </a>
 </div>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet>-->
+<md-card>
+<md-tabs>
+  <md-tab-group>
+
+    <md-tab>
+      <template md-tab-label> Personal </template>
+      <template md-tab-content>
+        <app-personal></app-personal>
+      </template>
+    </md-tab>
+
+    <md-tab>
+      <template md-tab-label> Preferences </template>
+      <template md-tab-content>
+        <app-preferences></app-preferences>
+      </template>
+    </md-tab>
+
+    <md-tab>
+      <template md-tab-label> Feed </template>
+      <template md-tab-content>
+        <feed-for-user></feed-for-user>
+      </template>
+    </md-tab>
+
+  </md-tab-group>
+</md-tabs>
+</md-card>

@@ -7,6 +7,7 @@ import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
 import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
 
 
+
 @Component({
   moduleId: module.id,
   selector: 'n-live-website-app',
@@ -20,6 +21,6 @@ import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
   {path:'/home', component:HomeComponent}
 ])
 export class NLiveWebsiteAppComponent {
-  loggenIn:boolean = false;
+  loggedIn:boolean = false;
   title = 'n-live-website works fine!';
 }

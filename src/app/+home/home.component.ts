@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import {Routes, ROUTER_DIRECTIVES, RouteSegment} from '@angular/router';
 import {PersonalComponent} from '../personal/';
+import {PreferencesComponent} from '../preferences/';
 import {DietBuilderComponent} from '../diet-builder/';
+import {MD_TABS_DIRECTIVES} from '@angular2-material/tabs';
+import {FeedComponent} from '../feed/';
 
 @Component({
   moduleId: module.id,
   selector: 'app-home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
-  directives:[ROUTER_DIRECTIVES]
+  directives:[ROUTER_DIRECTIVES, PersonalComponent, PreferencesComponent, MD_TABS_DIRECTIVES, FeedComponent]
 })
-@Routes([
-  {path:'/personal', component:PersonalComponent},
-  {path:'/diet-builder', component:DietBuilderComponent}
-])
+//@Routes([
+//  {path:'/personal', component:PersonalComponent},
+//  {path:'/diet-builder', component:DietBuilderComponent}
+//])
 
 export class HomeComponent implements OnInit {
   user:any;

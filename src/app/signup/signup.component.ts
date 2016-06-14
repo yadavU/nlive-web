@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,ControlGroup} from '@angular/common';
+declare var Stamplay;
 
 @Component({
   moduleId: module.id,
@@ -12,7 +13,8 @@ export class SignupComponent implements OnInit {
   constructor(public fb:FormBuilder) {
     this.signupForm=fb.group({
       email:[''],
-      password:['']
+      password:[''],
+      displayName:['']
     })
   }
 
@@ -21,9 +23,9 @@ export class SignupComponent implements OnInit {
 
   submitsignupForm(){
     console.log(this.signupForm.value);
-/*    Stamplay.User.signup(this.signupForm.value).then((res)=>{
+    Stamplay.User.signup(this.signupForm.value).then((res)=>{
       console.log(res);
     });
-*/  }
+  }
 
 }

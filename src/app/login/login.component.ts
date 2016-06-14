@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {ControlGroup, FormBuilder} from '@angular/common';
-
+declare var Stamplay;
 @Component({
   moduleId: module.id,
   selector: 'user-login',
@@ -9,12 +9,13 @@ import {ControlGroup, FormBuilder} from '@angular/common';
   styleUrls: ['login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  notRegistered : boolean;
   loginForm:ControlGroup;
   constructor(public fb:FormBuilder, public _router:Router) {
     this.loginForm=fb.group({
       email:[''],
-      password:['']
+      password:[''],
+
     })
   }
 
@@ -23,13 +24,16 @@ export class LoginComponent implements OnInit {
 
   submitloginForm(){
     console.log(this.loginForm.value);
-    this._router.navigate(['home',{user: this.loginForm.value.email}]);
-    
-    /*Stamplay.User.login(this.loginForm.value).then((res)=>{
-    if(res.emailVerified){
-      this._router.navigate(['home',{data: res})
+
+
+    Stamplay.User.login(this.loginForm.value).then((res)=>{
+    if(res.emailVerified == true){
+      this._router.navigate(['home',{data: res.displayName}]);
   }
-});*/
+  else{
+    this._router.navigate(['./signup']);
+  }
+});
   }
 
 }
