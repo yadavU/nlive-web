@@ -19,7 +19,10 @@ const materialPkgs:string[] = [
   'grid-list',
   'tabs',
   'list',
-  'input'
+  'input',
+  'toolbar',
+  'sidenav',
+  'checkbox'
 ];
 
 materialPkgs.forEach((pkg) => {
@@ -56,6 +59,9 @@ const barrels: string[] = [
   'app/preferences',
   'app/feed',
   'app/comment-drop',
+  'app/diet-view',
+  'app/stamplay-tests',
+  'app/sessions',
   /** @cli-barrel */
 ];
 

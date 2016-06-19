@@ -1,4 +1,4 @@
-import { NLiveWebsitePage } from './app.po';
+import {NLiveWebsitePage} from "./app.po";
 
 describe('n-live-website App', function() {
   let page: NLiveWebsitePage;

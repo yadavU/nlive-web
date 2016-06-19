@@ -1,0 +1,22 @@
+<md-grid-list cols="3" [style.background]='red' class="diet-plan-view" >
+  <md-grid-tile [colspan]='1'> Breakfast</md-grid-tile>
+  <md-grid-tile [colspan]='1'> Lunch</md-grid-tile>
+  <md-grid-tile [colspan]='1'><button (click)="clicked()"> get </button></md-grid-tile>
+
+  <md-grid-tile *ngFor='let daymeal of daysmeals' [colspan]='daymeal.cols'>
+    <md-card>
+      <md-card-subtitle>
+        {{daymeal.name}}
+      </md-card-subtitle>
+      <md-card-content>
+        <p>{{daymeal.quantity}} {{daymeal.quantitymeasurement}}</p>
+        <br>
+        {{daymeal.attributes}}
+      </md-card-content>
+      <md-card-actions>
+        <button md-button> View alternates </button>
+        <md-checkbox> check </md-checkbox>
+      </md-card-actions>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>

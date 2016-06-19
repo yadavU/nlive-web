@@ -1,0 +1,11 @@
+<p> Fetch Requests </p>
+<button md-button> User </button>
+<select  [(ngModel)]="cobject" >
+  <option [value]='cobject.selection'> Tags </option>
+  <option [value]='cobject.selection'> BlogPosts </option>
+  <option [value]='cobject.selection'> User Categories </option>
+  <option [value]='cobject.selection'> DietPlans</option>
+  <option [value]='cobject.selection'> Attributes </option>
+  <option [value]='cobject.selection'> Food Items </option>
+</select>
+<button md-button (click)="Getcall()"> Object </button>

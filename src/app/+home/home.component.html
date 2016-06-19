@@ -1,10 +1,23 @@
-<h3> current user : {{user}}</h3>
+<h3> current user : {{userdisplayName}}</h3>
 <!--<div>
   <a [routerLink]="['./personal']"> Personal Info and Preferences </a><br>
   <a [routerLink]="['./diet-builder']"> Build Diet for the User </a>
 </div>
 <router-outlet></router-outlet>-->
-<md-card>
+<md-sidenav-layout>
+  <md-sidenav #sidenav [opened]='menuopen'  >
+    <a [routerLink]="['./diet-view']" >View Your Diet Plan</a>
+  </md-sidenav>
+  <button md-button #menuButton (click)="toggleSidenav()"> OPEN MENU </button>
+  <md-content>
+    <router-outlet></router-outlet>
+  </md-content>
+
+</md-sidenav-layout>
+
+
+
+<!--<md-card>
 <md-tabs>
   <md-tab-group>
 
@@ -31,4 +44,4 @@
 
   </md-tab-group>
 </md-tabs>
-</md-card>
+</md-card>-->

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
 import {MD_GRID_LIST_DIRECTIVES} from '@angular2-material/grid-list';
 import {CommentDropComponent} from '../comment-drop/';
-import {BlogComponent} from '../';
+
 
 
 @Component({
@@ -24,7 +24,7 @@ export class FeedComponent implements OnInit {
   }
 
   add_post(){
-    
+
   }
   upvote(thepost){
     console.log('upvote click recorded');

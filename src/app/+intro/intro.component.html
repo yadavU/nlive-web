@@ -2,8 +2,17 @@
 <a [routerLink]="['./signup']"> Register </a>
 
 <router-outlet></router-outlet>-->
+
 <md-card>
   <md-tab-group>
+
+    <md-tab>
+      <template md-tab-label>Stamplay Tests</template>
+      <template md-tab-content>
+        <stamplay-tests></stamplay-tests>
+
+      </template>
+    </md-tab>
     <md-tab>
       <template md-tab-label>Login</template>
       <template md-tab-content>
@@ -15,6 +24,13 @@
       <template md-tab-label>Sign Up</template>
       <template md-tab-content>
         <user-signup></user-signup>
+
+      </template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label> Diet-Viewer </template>
+      <template md-tab-content>
+        <user-diet-view></user-diet-view>
 
       </template>
     </md-tab>

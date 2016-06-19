@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
   submitsignupForm(){
     console.log(this.signupForm.value);
     Stamplay.User.signup(this.signupForm.value).then((res)=>{
-      console.log(res);
+      console.log("Registered");
     });
   }
 

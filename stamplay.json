@@ -1,7 +1,7 @@
 {
-  "appId": "nliveweb",
-  "apiKey": "6033c3f933c03bfcedb0a608b20f9af6b9d2fd4c59e1f1fbec6e5f1c87c0e03d",
-  "public": "./src/",
+  "appId": "nliveweb1",
+  "apiKey": "d86191c6ebc8e5f176110881e4361663cac97f67dcb993dbcb7ca9ba1d472eaa",
+  "public": "./src",
   "ignore": [
     "stamplay.json",
     "**/.*",
