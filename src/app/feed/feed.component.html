@@ -1,5 +1,5 @@
 <md-grid-list cols="3" rows="10px">
-  <md-grid-tile *ngFor="let post of posts" [colspan]="post.cols" [rowspan]="post.rows" [style.background]="post.color" >
+  <md-grid-tile *ngFor="let post of posts" [colspan]="post.cols" [rowspan]="post.rows"  >
     <md-card>
       <md-card-content>
         {{post.content}}

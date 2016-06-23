@@ -1,19 +1,50 @@
-<h3> current user : {{userdisplayName}}</h3>
+<button md-button (click)= "linktoaccount()"> <md-icon>Account</md-icon> </md-button>
 <!--<div>
   <a [routerLink]="['./personal']"> Personal Info and Preferences </a><br>
   <a [routerLink]="['./diet-builder']"> Build Diet for the User </a>
 </div>
 <router-outlet></router-outlet>-->
-<md-sidenav-layout>
-  <md-sidenav #sidenav [opened]='menuopen'  >
-    <a [routerLink]="['./diet-view']" >View Your Diet Plan</a>
-  </md-sidenav>
-  <button md-button #menuButton (click)="toggleSidenav()"> OPEN MENU </button>
-  <md-content>
-    <router-outlet></router-outlet>
-  </md-content>
+<md-card>
+  
+  <md-card-title>{{user}}</md-card-title>
+  <md-tab-group>
 
-</md-sidenav-layout>
+
+    <md-tab>
+      <template md-tab-label>Sessions</template>
+      <template md-tab-content>
+
+        <app-sessions></app-sessions>
+
+      </template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>Diet Plan</template>
+      <template md-tab-content>
+
+        <user-diet-view></user-diet-view>
+
+
+      </template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>Personal</template>
+      <template md-tab-content>
+
+        <user-personal></user-personal>
+
+      </template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>Feed</template>
+      <template md-tab-content>
+
+        <blog-feed></blog-feed>
+      </template>
+    </md-tab>
+
+  </md-tab-group>
+</md-card>
 
 
 

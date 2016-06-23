@@ -7,7 +7,7 @@ import {CommentDropComponent} from '../comment-drop/';
 
 @Component({
   moduleId: module.id,
-  selector: 'feed-for-user',
+  selector: 'blog-feed',
   templateUrl: 'feed.component.html',
   styleUrls: ['feed.component.css'],
   directives:[MD_GRID_LIST_DIRECTIVES, MD_CARD_DIRECTIVES, CommentDropComponent]

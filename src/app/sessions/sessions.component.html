@@ -1,3 +1,24 @@
-<p>
-  sessions works!
-</p>
+<select [(ngModel)]="filter">
+  <option value="all">All sessions</option>
+  <option value="my">My sessions</option>
+  <option value="comingup">Coming Up</option>
+</select>
+<p>{{filter}}</p>
+<md-list>
+  <md-list-item *ngFor='let session of allsessions'>
+    <md-card>
+      <md-card-title>
+        {{session.name}}
+      </md-card-title>
+      <md-card-content>
+        <p>{{session.time}}</p> <br>
+        <p>{{session.place}} </p><br>
+        <p>{{session.details}} </p><br>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button> Opt for session </button>
+        <button md-button> Open sessions page </button>
+      </md-card-actions>
+    </md-card>
+  </md-list-item>
+</md-list>

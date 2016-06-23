@@ -1,0 +1,23 @@
+.primary{
+     background-color: '#387ef5';
+ }
+
+.secondary{
+    color: '#32db64';
+  }
+
+.danger{
+    background-color: '#f53d3d';
+   }
+
+.light{
+      color:'#f4f4f4';
+     }
+
+ .dark{
+        color: '#222';
+ }
+
+ .favorite{
+   color:'#69BB7B';
+ }

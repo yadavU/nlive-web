@@ -1,9 +1,9 @@
 <form [ngFormModel]="infoForm" (submit)="submitinfoForm()">
-  <input ngControl='name' placeholder="Full name please"><br>
-  <input ngControl='phone' placeholder="phone number here please" type="number"><br>
-  <input ngControl='dob' placeholder="Date of birth"><br>
-  <input ngConrol='address' placeholder="address"><br>
-  <input ngConrol='height' placeholder="height"><br>
+  <md-input ngControl='name' placeholder="Full name please"></md-input>
+  <md-input ngControl='phone' placeholder="phone number here please" type="number"></md-input>
+  <md-input type = "date" ngControl='dob' placeholder="Date of birth"></md-input>
+  <md-input ngConrol='address' placeholder="address"></md-input>
+  <md-input ngConrol='height' placeholder="height"></md-input>
   <select ngConrol='weight'>
     <option value="lessthanfortyfive">  < 45 </option>
     <option value="fortytofifty"> 45-56 </option>
@@ -12,5 +12,6 @@
     <option value="eightytoninty"> 81-95 </option>
     <option value="greaterthannintyfive"> > 95 </option>
   </select>
-  <button type="submit"> That looks like me </button>
+  <button md-button type="submit" [disabled] = "letEdit"> That looks like me </button>
 </form>
+<button md-button (click)="editForm()"> Let Me Edit </button>

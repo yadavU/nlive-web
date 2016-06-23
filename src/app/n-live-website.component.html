@@ -1,5 +1,15 @@
+<md-toolbar [color]="primary">
+  <div (loginevent)="loggedIn = true" >
+    <span *ngIf="!loggedIn" class = "primary"> <a [routerLink]="['/intro']"> You are not registered, please sign in or sign up</a> </span>
+    <div *ngIf="loggedIn">
+      <span  class = "secondary"> <a [routerLink]="['/home',res.displayName]"> Home </a> </span>
+      <span class = "secondary"> <button md-button (click) = "logout()"> Logout </button>
+    </div>
+  </div>
+</md-toolbar>
+<router-outlet [user]="res"></router-outlet>
 
-<md-sidenav-layout>
+<!-- <md-sidenav-layout>
 <md-sidenav #menu>
   <md-list>
     <md-list-item *ngFor='let loggedin of loggedinPages'>
@@ -16,3 +26,4 @@
     <app-intro></app-intro>
   </md-content>
 </md-sidenav-layout>
+-->

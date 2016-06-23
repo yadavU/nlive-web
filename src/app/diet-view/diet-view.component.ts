@@ -6,7 +6,7 @@ import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
 import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
 import {MD_CHECKBOX_DIRECTIVES} from '@angular2-material/checkbox';
 
-import { DietService } from '../';
+
 
 @Component({
   moduleId: module.id,
@@ -22,7 +22,7 @@ export class DietViewComponent implements OnInit {
 //      {
 //      name:'Monday',
 //      color:'red',
-/*      daysmeals=[
+      daysmeals=[
         {
         day:'Monday',
         mealtime:'breakfast',
@@ -89,13 +89,13 @@ export class DietViewComponent implements OnInit {
       checked:false,
       cols:1
       }
-    ]*/
+    ]
   //}
   //]
-  constructor(public _dietService : DietService) {
+  constructor() {
   }
   clicked(){
-    this.data= this._dietService.getuserDiet(this.usercategory);
+
   }
   ngOnInit() {
   }

@@ -1,9 +1,13 @@
 <div>
   <form [ngFormModel]="signupForm" (submit)="submitsignupForm()">
-    <input ngControl='email' placeholder="Email Id you use"><br>
-    <input ngControl='password' placeholder="password you wish to have"><br>
-    <input ngControl='displayName' placeholder="User name"><br>
-    <button type="submit"> Register as a user </button>
+    <md-input ngControl='email' placeholder="Email Id you use"></md-input>
+    <md-input ngControl='password' placeholder="password you wish to have"></md-input>
+    <md-input ngControl='displayName' placeholder="User name"></md-input>
+    <button md-button type="submit"> Register as a user </button>
 
   </form>
+</div>
+
+<div *ngIf="registered">
+  <p> You have been registered, please verify your email and proceed to login page</p>
 </div>
