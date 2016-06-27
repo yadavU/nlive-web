@@ -7,14 +7,12 @@
 <md-list>
   <md-list-item *ngFor='let session of allsessions'>
     <md-card>
-      <md-card-title>
-        {{session.name}}
-      </md-card-title>
-      <md-card-content>
-        <p>{{session.time}}</p> <br>
-        <p>{{session.place}} </p><br>
-        <p>{{session.details}} </p><br>
-      </md-card-content>
+      <md-card-title-group>
+        <!--<img md-card-md-image src="../../images/test.png">-->
+        <md-card-title>{{session.name}}</md-card-title>
+        <md-card-subtitle>{{session.time}}</md-card-subtitle>
+        <md-card-subtitle>{{session.details}}</md-card-subtitle>
+      </md-card-title-group>
       <md-card-actions>
         <button md-button> Opt for session </button>
         <button md-button> Open sessions page </button>

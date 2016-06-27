@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,OAAO;EACL,KAAK,EAAE,oBAAoB;EAC3B,OAAO,EAAE,EAAE;;AAGb,iBAAiB;EACf,KAAK,EAAG,KAAK;;AAGf,aAAa;EACX,KAAK,EAAG,oBAAmB;EAC3B,gBAAgB,EAAE,oBAAiB;;AAGrC,8BAA8B;EAC5B,IAAI,EAAG,QAAQ;;AAEjB,UAAU;EACR,OAAO,EAAE,IAAI;EACb,gBAAgB,EAAE,oBAAiB;EACnC,KAAK,EAAE,iBAAgB",
+"sources": ["n-live-website.component.scss"],
+"names": [],
+"file": "n-live-website.component.css"
+}

@@ -1,0 +1,22 @@
+md-card{
+  color: rgba(255, 0, 0, 0.5);
+  z-index: -1;
+}
+
+img md-card-image{
+  width : 200px;
+
+}
+md-card:hover{
+  color : rgba(0, 500,0, 0.5);
+  background-color: rgba(0,0,500,0.7);
+}
+
+md-toolbar span.toolbardivider{
+  flex : 1 1 auto;
+}
+md-toolbar{
+  display: flex;
+  background-color: rgba(0,0,500,0.8);
+  color: rgba (500,0,0,1);
+}

@@ -1,23 +1,21 @@
-.primary{
-     background-color: '#387ef5';
- }
+/*md-card {
+  color: rgba(255, 0, 0, 0.5);
+  z-index: -1; }
 
-.secondary{
-    color: '#32db64';
-  }
+img md-card-image {
+  width: 200px; }
 
-.danger{
-    background-color: '#f53d3d';
-   }
+md-card:hover {
+  color: rgba(0, 255, 0, 0.5);
+  background-color: rgba(0, 0, 255, 0.7); }
 
-.light{
-      color:'#f4f4f4';
-     }
+md-toolbar span.toolbardivider {
+  flex: 1 1 auto;
+}
 
- .dark{
-        color: '#222';
- }
+md-toolbar {
+  display: flex;
 
- .favorite{
-   color:'#69BB7B';
- }
+  color: rgba 500, 0, 0, 1; }
+*/
+/*# sourceMappingURL=n-live-website.component.css.map */

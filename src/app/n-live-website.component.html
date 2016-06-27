@@ -1,15 +1,41 @@
-<md-toolbar [color]="primary">
-  <div (loginevent)="loggedIn = true" >
-    <span *ngIf="!loggedIn" class = "primary"> <a [routerLink]="['/intro']"> You are not registered, please sign in or sign up</a> </span>
-    <div *ngIf="loggedIn">
-      <span  class = "secondary"> <a [routerLink]="['/home',res.displayName]"> Home </a> </span>
-      <span class = "secondary"> <button md-button (click) = "logout()"> Logout </button>
-    </div>
-  </div>
-</md-toolbar>
-<router-outlet [user]="res"></router-outlet>
+<div [ngSwitch]="loggedIn">
+  <md-toolbar @toolbarstate="statex" >
 
-<!-- <md-sidenav-layout>
+      <span  > <a [routerLink]="['/intro']"> <i class="material-icons enable">face</i> You are not registered, please sign in or sign up</a> </span>
+      <span  > <a [routerLink]="['/home',res.displayName]"> Home </a> </span>
+      <span class="toolbardivider"></span>
+      <span > <button md-button (click) = "logout()"> Logout </button> </span>
+
+
+</md-toolbar>
+</div>
+<div @showoutlet="outletstate">
+  <router-outlet [user]="res"></router-outlet>
+</div>
+<!--<md-toolbar>
+
+    <span class="personal"> Personal</span>
+    <span class="fillspace"></span>
+    <span> Home </span>
+
+</md-toolbar>
+
+<md-card>
+  <md-card-header>
+    <img md-card-avatar src="../images/test.png">
+    <md-card-title> Main Title </md-card-title>
+  </md-card-header>
+
+  <md-card-content>
+    <p>Content in p </p><br>
+    and outside
+  </md-card-content>
+  <md-card-actions>
+    <button md-button> action button </button>
+  </md-card-actions>
+</md-card>
+-->
+<!--  <md-sidenav-layout>
 <md-sidenav #menu>
   <md-list>
     <md-list-item *ngFor='let loggedin of loggedinPages'>
@@ -26,4 +52,4 @@
     <app-intro></app-intro>
   </md-content>
 </md-sidenav-layout>
--->
+ -->

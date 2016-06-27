@@ -1,5 +1,5 @@
 import { Component, OnInit, trigger, state, style, transition, animate, Input } from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES, RouteSegment} from '@angular/router';
+import {Routes, ROUTER_DIRECTIVES, RouteSegment, Router} from '@angular/router';
 import {MD_TABS_DIRECTIVES} from '@angular2-material/tabs';
 import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav';
 
@@ -16,16 +16,16 @@ import {DietViewComponent} from '../diet-view/';
   directives:[ROUTER_DIRECTIVES, PersonalComponent, FeedComponent, DietViewComponent, SessionsComponent, MD_TABS_DIRECTIVES, MD_SIDENAV_DIRECTIVES]
 /*  animations: [
   trigger('homeState', [
-    state('inactive', style({transform: 'translateX(0) scale(1)'})),
-    state('active',   style({transform: 'translateX(0) scale(1.1)'})),
+    state('display', style({transform: translateX(0) scale(1)})),
+    state('active',   style({transform: translateX(0)})),
     transition('inactive => active', animate('100ms ease-in')),
     transition('active => inactive', animate('100ms ease-out')),
     transition('void => inactive', [
-      style({transform: 'translateX(-100%) scale(1)'}),
-      animate(100)
+      style({transform: translateX(-100%)}),
+      animate(100ms ease-out)
     ]),
     transition('inactive => void', [
-      animate(100, style({transform: 'translateX(100%) scale(1)'}))
+      animate(100, style({transform: translateX(100%) scale(1)}))
     ]),
     transition('void => active', [
       style({transform: 'translateX(0) scale(0)'}),
@@ -38,19 +38,20 @@ import {DietViewComponent} from '../diet-view/';
 ]*/
 
 })
-@Routes([
+
+/*@Routes([
  {path:'/personal', component:PersonalComponent},
  {path:'/sessions', component:SessionsComponent},
  {path: '/feed', component: FeedComponent},
  {path:'/diet-view', component:DietViewComponent}
 ])
-
+*/
 export class HomeComponent implements OnInit {
-  @Input() user;
+  @Input() user : any;
   a:number =0;
   ishtyle:any;
   state = 'active';
-  constructor(public _routesegment:RouteSegment) {
+  constructor(public _routesegment:RouteSegment, public router:Router) {
 
 //    this.user = this._routesegment.getParam('user');
   }
@@ -61,8 +62,7 @@ export class HomeComponent implements OnInit {
   }
  buttonclick(){
 
-   this.state = (this.a%2 == 0)? 'active': 'inactive';
-   this.a=this.a+1;
+
  }
 
  linktoaccount(){

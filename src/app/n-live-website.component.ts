@@ -1,5 +1,5 @@
 import { Routes, ROUTER_DIRECTIVES, Router} from "@angular/router";
-import { Component, Input } from "@angular/core";
+import { Component, Input, trigger, animate, state, style, transition } from "@angular/core";
 import { MD_CARD_DIRECTIVES } from "@angular2-material/card";
 import { MdIcon, MdIconRegistry } from "@angular2-material/icon";
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
@@ -15,6 +15,28 @@ declare var Stamplay;
   selector: 'n-live-website-app',
   templateUrl: 'n-live-website.component.html',
   styleUrls: ['n-live-website.component.css'],
+  animations:[
+    trigger('toolbarstate',[
+      state('loggedIn',style({
+        backgroundColor:'#FF5722',
+        opacity: 1
+      })),
+      state('loggedOut',style({
+        backgroundColor:'#FFAB91',
+        opactiy: 1
+
+      })),
+      transition('loggedOut=>loggedIn', animate('100ms ease-in')),
+      transition('loggedIn=>loggedOut', animate('100ms eas-out'))
+    ]),
+    trigger('showoutlet',[
+      state('rendered', style({
+      backgroundColor : '#E1F5FE',
+      zIndex : 2
+    })),
+    transition("void=>rendered", animate('100ms ease-in'))
+  ])
+  ],
   directives:[ROUTER_DIRECTIVES,IntroComponent, MD_LIST_DIRECTIVES, MD_SIDENAV_DIRECTIVES, MD_CARD_DIRECTIVES, MdIcon],
   providers:[MdIconRegistry]
 })
@@ -23,6 +45,8 @@ declare var Stamplay;
   {path:'/home/:user', component:HomeComponent}
 ])
 export class NLiveWebsiteAppComponent {
+  a:number =0;
+  toolbarstate: string = "loggedOut";
   res={
     id: 1,
     displayName:"human",
@@ -55,8 +79,9 @@ export class NLiveWebsiteAppComponent {
   }
 
   logout(){
-    this.router.navigate(['/intro']);
-    this.loggedIn= false;
+
+    //this.router.navigate(['/intro']);
+    this.toolbarstate= "loggedOut";
   }
 
 
