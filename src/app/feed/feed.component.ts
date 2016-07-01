@@ -14,8 +14,8 @@ import {CommentDropComponent} from '../comment-drop/';
 })
 export class FeedComponent implements OnInit {
   posts=[
-    {content:'good to eat good, stay away from emotional stuff', cols: 1 , rows:1, color:'lightblue', id:0, showComment:false},
-    {content:'Eat meet yo', cols: 1 ,rows:1,color:'#990066', id:1, showComment: false},
+    {content:'This is a post to keep user occupied ', cols: 1 , rows:1, color:'lightblue', id:0, showComment:false},
+    {content:'Posts are also intended to get the user to decide upon their goals on the lines of the services we provide', cols: 1 ,rows:1,color:'#990066', id:1, showComment: false},
     {content:'This is a potray of some feed for the user- blogposts to keep\'em occupied', cols:2,rows:1,color:'#8C0073', id:2, showComment:false}
 ]
   constructor() {}

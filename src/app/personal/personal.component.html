@@ -1,7 +1,18 @@
 
+
+  <personal-page [userPersonal]="UserPersonal"></personal-page>
+  <!--<md-list>
+    <md-list-item> {{UserPersonal.name}}</md-list-item>
+    <md-list-item> {{UserPersonal.dob}}</md-list-item>
+    <md-list-item> {{UserPersonal.address}}</md-list-item>
+  </md-list>
+-->
+
+
 <md-card>
-  <user-info></user-info>
+  <md-list>
+    <md-list-item> I have {{UserPreferences.healthcondition}}</md-list-item>
+    <md-list-item> I would prefer to get information regarding {{UserPreferences.blogpostpreferences}}</md-list-item>
+  </md-list>
 </md-card>
-<md-card>
-  <app-preferences></app-preferences>
-</md-card>
+<h3>Click on the top right button to edit the information and reload home</h3>

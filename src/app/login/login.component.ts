@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value);
       this.loginevent.emit(null);
 
-//    Stamplay.User.login(this.loginForm.value).then((res)=>{
-      let displayName="ujjwal";
+  //  Stamplay.User.login(this.loginForm.value).then((res)=>{
+      let displayName = 'loginName';
       this._router.navigate(['/home', displayName]);
 
 

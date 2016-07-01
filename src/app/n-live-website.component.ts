@@ -5,6 +5,7 @@ import { MdIcon, MdIconRegistry } from "@angular2-material/icon";
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 
+import { PersonalComponent } from './+personal';
 import { IntroComponent } from "./+intro/";
 import { HomeComponent } from "./+home/";
 
@@ -15,7 +16,7 @@ declare var Stamplay;
   selector: 'n-live-website-app',
   templateUrl: 'n-live-website.component.html',
   styleUrls: ['n-live-website.component.css'],
-  animations:[
+/*  animations:[
     trigger('toolbarstate',[
       state('loggedIn',style({
         backgroundColor:'#FF5722',
@@ -28,30 +29,24 @@ declare var Stamplay;
       })),
       transition('loggedOut=>loggedIn', animate('100ms ease-in')),
       transition('loggedIn=>loggedOut', animate('100ms eas-out'))
-    ]),
-    trigger('showoutlet',[
-      state('rendered', style({
-      backgroundColor : '#E1F5FE',
-      zIndex : 2
-    })),
-    transition("void=>rendered", animate('100ms ease-in'))
-  ])
-  ],
+    ])
+
+  ],*/
   directives:[ROUTER_DIRECTIVES,IntroComponent, MD_LIST_DIRECTIVES, MD_SIDENAV_DIRECTIVES, MD_CARD_DIRECTIVES, MdIcon],
   providers:[MdIconRegistry]
 })
 @Routes([
  {path:'/intro', component:IntroComponent},
-  {path:'/home/:user', component:HomeComponent}
+  {path:'/home/:user', component:HomeComponent},
+  {path: '/personal', component: PersonalComponent}
 ])
 export class NLiveWebsiteAppComponent {
-  a:number =0;
-  toolbarstate: string = "loggedOut";
-  res={
-    id: 1,
-    displayName:"human",
-    email:"human@earth21.world"
-  };
+  notRegistered: boolean ;// Change toolbar display when loggedIn
+
+  logState: string = "loggedOut";//to animate the toolbar
+  userInfo: any;
+  displayName:string;
+
   loggedIn:boolean=false;
   loggedoutPages =['Login', 'Regsiter'];
   loggedinPages = ['View diet','View Sessions', 'Feed', 'Personal'];
@@ -69,19 +64,27 @@ export class NLiveWebsiteAppComponent {
 //    this.loggedIn=this.routeData.get('loggedIn');
 
 //    Stamplay.User.currentUser().then((res)=>{
-//      if(res._id !== undefined)
+//      console.log(res.displayName);
+//      if(res.displayName != undefined)
 //        {
-//      var displayName= "ujjwal";
-//               this.router.navigate(['./home', res.displayName]);
+//          this.notRegistered = false;
+
+//          this.displayName = res.displayName;
+//          this.userInfo = res;
+//          }
+//      else{
+//        this.notRegistered = true;
+
 //      }
 //    });
 
   }
 
   logout(){
+    this.notRegistered = true;
 
-    //this.router.navigate(['/intro']);
-    this.toolbarstate= "loggedOut";
+    this.router.navigate(['/intro']);
+    //this.toolbarstate= "loggedOut";
   }
 
 

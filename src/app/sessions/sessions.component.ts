@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Routes, Router } from '@angular/router';
 
-
+import { SessionDetailsComponent } from '../session-details/';
 
 @Component({
   moduleId: module.id,
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'sessions.component.html',
   styleUrls: ['sessions.component.css']
 })
+//@Routes([
+//  {path : '/details', component : SessionDetailsComponent}
+//])
 export class SessionsComponent implements OnInit {
   filter:any;
   allsessions : any=[
@@ -25,12 +29,14 @@ export class SessionsComponent implements OnInit {
     }
   ];
 
-  constructor() {
-//    this.allsessions= this._sessionsService.getallsessions();
+  constructor(public router : Router) {
+
   }
 
   ngOnInit() {
   }
-
-
+  openSession(session){
+    console.log(session);
+  //  this.router.navigate(['./details']);
+  }
 }

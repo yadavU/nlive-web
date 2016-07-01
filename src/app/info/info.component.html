@@ -1,10 +1,28 @@
 <form [ngFormModel]="infoForm" (submit)="submitinfoForm()">
-  <md-input ngControl='name' placeholder="Full name please"></md-input>
-  <md-input ngControl='phone' placeholder="phone number here please" type="number"></md-input>
-  <md-input type = "date" ngControl='dob' placeholder="Date of birth"></md-input>
-  <md-input ngConrol='address' placeholder="address"></md-input>
-  <md-input ngConrol='height' placeholder="height"></md-input>
-  <select ngConrol='weight'>
+
+  <table>
+    <tr>
+      <td><md-input ngControl='firstName'><span md-prefix>First Name : </span></md-input></td>
+      <td><md-input ngControl='lastName'> <span md-prefix> Last Name : </span></md-input></td>
+    </tr>
+  </table>
+<br>
+  <md-input ngControl='phoneNumber' placeholder=" Phone Number" type="number"><md-hint align="end">10 digits</md-hint></md-input>
+<br>
+  <md-input ngConrol='address' placeholder="Location"> </md-input>
+<br>
+  <md-input ngConrol='height'>
+    <span md-prefix> Height : </span>
+    <span md-suffix> in cms </span>
+  </md-input>
+<br>
+  <md-radio-group ngControl= "age">
+    <md-radio-button *ngFor="let age of ageOptions" [value]="age.value">
+      {{age.label}}
+    </md-radio-button>
+  </md-radio-group>
+<br>
+  <select ngControl='weight'>
     <option value="lessthanfortyfive">  < 45 </option>
     <option value="fortytofifty"> 45-56 </option>
     <option value="fiftytosixty"> 57-68 </option>
@@ -12,6 +30,13 @@
     <option value="eightytoninty"> 81-95 </option>
     <option value="greaterthannintyfive"> > 95 </option>
   </select>
+<br>
+  <md-radio-group ngControl = "goalsChoice">
+    <md-radio-button *ngFor = "let goal of goalsOptions" [value]= " goal.value ">
+      {{goal.label}}
+    </md-radio-button>
+  </md-radio-group>
+<br>
   <button md-button type="submit" [disabled] = "letEdit"> That looks like me </button>
 </form>
 <button md-button (click)="editForm()"> Let Me Edit </button>

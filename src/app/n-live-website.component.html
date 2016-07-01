@@ -1,16 +1,16 @@
-<div [ngSwitch]="loggedIn">
-  <md-toolbar @toolbarstate="statex" >
+<div >
+  <md-toolbar >
 
-      <span  > <a [routerLink]="['/intro']"> <i class="material-icons enable">face</i> You are not registered, please sign in or sign up</a> </span>
-      <span  > <a [routerLink]="['/home',res.displayName]"> Home </a> </span>
+      <span class="notregistered ? show : hideLoggedOut" > <a [routerLink]="['/intro']"> <i class="material-icons enable">face</i> You are not registered, please sign in or sign up</a> </span>
+      <span class="notRegistered ? hideLoggedIn: show" > <a [routerLink]="['/home',displayName]"> Home </a> </span>
       <span class="toolbardivider"></span>
-      <span > <button md-button (click) = "logout()"> Logout </button> </span>
-
+      <span class="notRegistered? hideLoggedIn: show"> <button md-button (click) = "logout()"> Logout </button> </span>
+      <span > <a [routerLink]="['/personal']"> <i class="material-icons enable">Person </i></a></span>
 
 </md-toolbar>
 </div>
-<div @showoutlet="outletstate">
-  <router-outlet [user]="res"></router-outlet>
+<div >
+  <router-outlet [user]="userInfo"></router-outlet>
 </div>
 <!--<md-toolbar>
 
@@ -53,3 +53,5 @@
   </md-content>
 </md-sidenav-layout>
  -->
+
+<router-outlet></router-outlet>

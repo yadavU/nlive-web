@@ -14,8 +14,8 @@
         <md-card-subtitle>{{session.details}}</md-card-subtitle>
       </md-card-title-group>
       <md-card-actions>
-        <button md-button> Opt for session </button>
-        <button md-button> Open sessions page </button>
+        <button md-button > Opt for session </button>
+        <button md-button (click)="openSession(session)"> Open sessions page </button>
       </md-card-actions>
     </md-card>
   </md-list-item>

@@ -4,9 +4,9 @@ import {MD_TABS_DIRECTIVES} from '@angular2-material/tabs';
 import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav';
 
 import {SessionsComponent} from '../sessions/';
-import {PersonalComponent} from '../personal/';
 import {FeedComponent} from '../feed/';
 import {DietViewComponent} from '../diet-view/';
+import { PersonalComponent } from '../personal/';
 
 @Component({
   moduleId: module.id,
@@ -40,17 +40,15 @@ import {DietViewComponent} from '../diet-view/';
 })
 
 /*@Routes([
- {path:'/personal', component:PersonalComponent},
- {path:'/sessions', component:SessionsComponent},
- {path: '/feed', component: FeedComponent},
+
  {path:'/diet-view', component:DietViewComponent}
-])
-*/
+])*/
+
 export class HomeComponent implements OnInit {
-  @Input() user : any;
+  @Input('user') userDetails : any;
   a:number =0;
-  ishtyle:any;
-  state = 'active';
+
+
   constructor(public _routesegment:RouteSegment, public router:Router) {
 
 //    this.user = this._routesegment.getParam('user');

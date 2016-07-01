@@ -22,7 +22,8 @@ const materialPkgs:string[] = [
   'input',
   'toolbar',
   'sidenav',
-  'checkbox'
+  'checkbox',
+  'radio'
 ];
 
 materialPkgs.forEach((pkg) => {
@@ -62,6 +63,9 @@ const barrels: string[] = [
   'app/diet-view',
   'app/stamplay-tests',
   'app/sessions',
+  'app/session-details',
+  'app/+personal',
+  'app/personal-page',
   /** @cli-barrel */
 ];
 

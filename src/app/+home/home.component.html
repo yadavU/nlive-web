@@ -6,18 +6,18 @@
 <router-outlet></router-outlet> -->
 <md-card>
 
-  <md-card-title>{{user}}</md-card-title>
+  <md-card-title>{{userDetails | json }}</md-card-title>
   <md-tab-group>
 
-
     <md-tab>
-      <template md-tab-label>Sessions</template>
+      <template md-tab-label>App - preferences</template>
       <template md-tab-content>
 
-        <app-sessions></app-sessions>
+        <user-personal-display></user-personal-display>
 
       </template>
     </md-tab>
+
     <md-tab>
       <template md-tab-label>Diet Plan</template>
       <template md-tab-content>
@@ -27,14 +27,16 @@
 
       </template>
     </md-tab>
+
     <md-tab>
-      <template md-tab-label>Personal</template>
+      <template md-tab-label>Sessions</template>
       <template md-tab-content>
 
-        <user-personal></user-personal>
+        <app-sessions></app-sessions>
 
       </template>
     </md-tab>
+
     <md-tab>
       <template md-tab-label>Feed</template>
       <template md-tab-content>
