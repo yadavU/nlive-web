@@ -10,7 +10,7 @@
     <md-tab>
       <template md-tab-label>Login</template>
       <template md-tab-content>
-        <user-login></user-login>
+        <user-login (loginevent)="userloggedin($event)"></user-login>
 
       </template>
     </md-tab>

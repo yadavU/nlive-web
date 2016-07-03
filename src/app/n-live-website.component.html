@@ -1,16 +1,17 @@
 <div >
   <md-toolbar >
 
-      <span class="notregistered ? show : hideLoggedOut" > <a [routerLink]="['/intro']"> <i class="material-icons enable">face</i> You are not registered, please sign in or sign up</a> </span>
-      <span class="notRegistered ? hideLoggedIn: show" > <a [routerLink]="['/home',displayName]"> Home </a> </span>
-      <span class="toolbardivider"></span>
-      <span class="notRegistered? hideLoggedIn: show"> <button md-button (click) = "logout()"> Logout </button> </span>
-      <span > <a [routerLink]="['/personal']"> <i class="material-icons enable">Person </i></a></span>
-
+      <span *ngIf="showintro" > <a [routerLink]="['/intro']"> <i class="material-icons enable">face</i> You are not registered, please sign in or sign up</a> </span>
+      <div *ngIf="!showintro">
+        <span  > <a [routerLink]="['/home',displayName]"> Home </a> </span>
+        <span > <button md-button (click) = "logout()"> Logout </button> </span>
+        <span class="toolbardivider"></span>
+        <span > <a [routerLink]="['/personal']"> <i class="material-icons enable">Person </i></a></span>
+      </div>
 </md-toolbar>
 </div>
 <div >
-  <router-outlet [user]="userInfo"></router-outlet>
+  <router-outlet (loggedin)="loggedin($event)"></router-outlet>
 </div>
 <!--<md-toolbar>
 
@@ -53,5 +54,3 @@
   </md-content>
 </md-sidenav-layout>
  -->
-
-<router-outlet></router-outlet>

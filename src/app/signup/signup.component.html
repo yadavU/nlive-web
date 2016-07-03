@@ -1,8 +1,22 @@
 <div>
   <form [ngFormModel]="signupForm" (submit)="submitsignupForm()">
-    <md-input ngControl='email' placeholder="Email Id you use"></md-input>
-    <md-input ngControl='password' placeholder="password you wish to have"></md-input>
-    <md-input ngControl='displayName' placeholder="User name"></md-input>
+    <table>
+      <tr>
+        <td>
+          <md-input ngControl='email' placeholder="Email Id you use"></md-input>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <md-input type="password" ngControl='password' placeholder="password you wish to have"></md-input>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <md-input ngControl='displayName' placeholder="User name"></md-input>
+      </td>
+    </tr>
+  </table>
     <button md-button type="submit"> Register as a user </button>
 
   </form>

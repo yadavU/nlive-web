@@ -19,12 +19,12 @@ md-toolbar {
   color: rgba 500, 0, 0, 1; }
 */
 /*# sourceMappingURL=n-live-website.component.css.map */
-.hideLoggedIn{
+/*.hideLoggedIn{
   display: none;
 }
 .hideLoggedOut{
   display: none;
-}
+}*/
 md-toolbar .toolbardivider{
   flex : 1 1 auto;
 }

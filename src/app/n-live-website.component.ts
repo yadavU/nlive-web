@@ -41,48 +41,42 @@ declare var Stamplay;
   {path: '/personal', component: PersonalComponent}
 ])
 export class NLiveWebsiteAppComponent {
-  notRegistered: boolean ;// Change toolbar display when loggedIn
-
-  logState: string = "loggedOut";//to animate the toolbar
+  showintro: boolean ;// Change toolbar display when loggedIn
+  //logState: string = "loggedOut";//to animate the toolbar
   userInfo: any;
   displayName:string;
-
-  loggedIn:boolean=false;
-  loggedoutPages =['Login', 'Regsiter'];
-  loggedinPages = ['View diet','View Sessions', 'Feed', 'Personal'];
-
   title = 'n-live-website works fine!';
 
 
   constructor( public router:Router){
+    Stamplay.User.currentUser().then((res)=>{
+      console.log(res);
 
-    this.router.changes.subscribe((data)=>{
-      console.log("changes" + data);
+      if(res.displayName == undefined)
+        {
+          this.showintro = true;
+          console.log("executed undefned");
+          }
+      else{
+        this.showintro = false;
+        console.log("executed else");
+      }
     });
+  }
 
-//      this.loggedIn = this.segment.getParam('loggedIn');
-//    this.loggedIn=this.routeData.get('loggedIn');
-
-//    Stamplay.User.currentUser().then((res)=>{
-//      console.log(res.displayName);
-//      if(res.displayName != undefined)
-//        {
-//          this.notRegistered = false;
-
-//          this.displayName = res.displayName;
-//          this.userInfo = res;
-//          }
-//      else{
-//        this.notRegistered = true;
-
-//      }
-//    });
+  ngOnChanges(){
 
   }
 
-  logout(){
-    this.notRegistered = true;
+  loggedin(value){
+    console.log("recorded in main comp");
+    this.showintro=false;
+    console.log(value);
+  }
 
+  logout(){
+    this.showintro = true;
+  //  Stamplay.User.logout();
     this.router.navigate(['/intro']);
     //this.toolbarstate= "loggedOut";
   }

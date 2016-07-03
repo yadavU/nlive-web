@@ -1,10 +1,10 @@
 <div>
   <form [ngFormModel]="loginForm" (submit)="submitloginForm()">
-    <label> Email</label>
-      <input ngControl='email' placeholder="Email"><br>
-    <label> Password</label>
-      <input ngControl='password' placeholder="password"><br>
-    <button type="submit"> Moments from being alive </button>
+      <md-input ngControl='email' placeholder="Email"></md-input>
+
+      <md-input type="password" ngControl='password' placeholder="password"></md-input>
+      <br>
+    <button md-button type="submit"> Moments from being alive </button>
   </form>
 </div>
 <div *ngIf="loginfailed">
