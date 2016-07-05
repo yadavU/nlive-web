@@ -1,5 +1,5 @@
 import { Routes, ROUTER_DIRECTIVES, Router} from "@angular/router";
-import { Component, Input, trigger, animate, state, style, transition } from "@angular/core";
+import { Component, OnInit, EventEmitter, Input, Output, trigger, animate, state, style, transition } from "@angular/core";
 import { MD_CARD_DIRECTIVES } from "@angular2-material/card";
 import { MdIcon, MdIconRegistry } from "@angular2-material/icon";
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
@@ -36,36 +36,37 @@ declare var Stamplay;
   providers:[MdIconRegistry]
 })
 @Routes([
- {path:'/intro', component:IntroComponent},
+  {path:'/intro', component:IntroComponent},
   {path:'/home/:user', component:HomeComponent},
   {path: '/personal', component: PersonalComponent}
+
 ])
-export class NLiveWebsiteAppComponent {
+export class NLiveWebsiteAppComponent implements OnInit{
   showintro: boolean ;// Change toolbar display when loggedIn
   //logState: string = "loggedOut";//to animate the toolbar
   userInfo: any;
   displayName:string;
   title = 'n-live-website works fine!';
-
-
+  @Output() nouser : EventEmitter<any> = new EventEmitter();
+  @Output() founduser : EventEmitter<any> = new EventEmitter();
   constructor( public router:Router){
-    Stamplay.User.currentUser().then((res)=>{
-      console.log(res);
 
-      if(res.displayName == undefined)
+  }
+
+  ngOnInit(){
+    Stamplay.User.currentUser().then((res)=>{
+      this.userInfo = res.user;
+
+      if(this.userInfo == undefined)
         {
-          this.showintro = true;
-          console.log("executed undefned");
+          this.nouser.emit(null);
           }
       else{
-        this.showintro = false;
+        this.founduser.emit(null);
+
         console.log("executed else");
       }
     });
-  }
-
-  ngOnChanges(){
-
   }
 
   loggedin(value){
@@ -76,7 +77,7 @@ export class NLiveWebsiteAppComponent {
 
   logout(){
     this.showintro = true;
-  //  Stamplay.User.logout();
+    //Stamplay.User.logout();
     this.router.navigate(['/intro']);
     //this.toolbarstate= "loggedOut";
   }

@@ -5,18 +5,21 @@
 </select>
 <p>{{filter}}</p>
 <md-list>
-  <md-list-item *ngFor='let session of allsessions'>
+  <md-list-item *ngFor='let session of sessionresdata'>
     <md-card>
+
       <md-card-title-group>
         <!--<img md-card-md-image src="../../images/test.png">-->
-        <md-card-title>{{session.name}}</md-card-title>
-        <md-card-subtitle>{{session.time}}</md-card-subtitle>
-        <md-card-subtitle>{{session.details}}</md-card-subtitle>
+        <md-card-title>{{session.sessionPrimarydisplay}}</md-card-title>
+        <md-card-subtitle>{{session.date_start}} , {{session.time_start}}</md-card-subtitle>
+        <md-card-subtitle>{{session.date_end}} , {{session.time_end}}</md-card-subtitle>
       </md-card-title-group>
+
       <md-card-actions>
         <button md-button > Opt for session </button>
         <button md-button (click)="openSession(session)"> Open sessions page </button>
       </md-card-actions>
+
     </md-card>
   </md-list-item>
 </md-list>

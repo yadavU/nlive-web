@@ -1,4 +1,4 @@
-<div >
+<div (nouser) = "showintro = true" (founduser) = "showintro = false" >
   <md-toolbar >
 
       <span *ngIf="showintro" > <a [routerLink]="['/intro']"> <i class="material-icons enable">face</i> You are not registered, please sign in or sign up</a> </span>

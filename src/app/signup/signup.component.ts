@@ -33,6 +33,7 @@ export class SignupComponent implements OnInit {
       this.registered=true;
     },(err)=>{
       this.registered =false;
+      console.log(err);
     });
 
   }

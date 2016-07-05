@@ -7,6 +7,7 @@ import {SessionsComponent} from '../sessions/';
 import {FeedComponent} from '../feed/';
 import {DietViewComponent} from '../diet-view/';
 import { PersonalComponent } from '../personal/';
+import { SessionDetailsComponent } from '../session-details/';
 
 @Component({
   moduleId: module.id,
@@ -39,10 +40,9 @@ import { PersonalComponent } from '../personal/';
 
 })
 
-/*@Routes([
-
- {path:'/diet-view', component:DietViewComponent}
-])*/
+@Routes([
+  {path:'/session-details', component:SessionDetailsComponent}
+])
 
 export class HomeComponent implements OnInit {
   @Input('user') userDetails : any;
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
  }
 
  linktoaccount(){
-   this.router.navigate(['./personal']);
+   this.router.navigate(['/personal']);
  }
 //  toggleSidenav(){
 //    this.menuopen=!this.menuopen;

@@ -3,6 +3,8 @@ import { Routes, Router } from '@angular/router';
 
 import { SessionDetailsComponent } from '../session-details/';
 
+declare var Stamplay;
+
 @Component({
   moduleId: module.id,
   selector: 'app-sessions',
@@ -14,29 +16,23 @@ import { SessionDetailsComponent } from '../session-details/';
 //])
 export class SessionsComponent implements OnInit {
   filter:any;
-  allsessions : any=[
-    {
-      name : 'Session1',
-      details : 'This is session detail for session1',
-      time : '6pm - 10pm',
-      data : '20th October 2016'
-    },
-    {
-      name : 'Session2',
-      details : 'This is session detail for session2',
-      time : '6am - 10am',
-      data : '21st October 2016'
-    }
-  ];
+  sessionresdata : any[];
 
   constructor(public router : Router) {
 
   }
 
   ngOnInit() {
+    Stamplay.Object("sessions").get({}).then((sessionres)=>{
+      this.sessionresdata = sessionres.data;
+      console.log(this.sessionresdata[0]);
+
+    },(err)=>{
+      console.log("sessionres error" , err);
+    });
   }
   openSession(session){
     console.log(session);
-  //  this.router.navigate(['./details']);
+    this.router.navigate(['/session-details']);
   }
 }
