@@ -1,5 +1,5 @@
 import { Component, OnInit, trigger, state, style, transition, animate, Input } from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES, RouteSegment, Router} from '@angular/router';
+import { ROUTER_DIRECTIVES, Router, ActivatedRoute} from '@angular/router';
 import {MD_TABS_DIRECTIVES} from '@angular2-material/tabs';
 import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav';
 
@@ -8,6 +8,8 @@ import {FeedComponent} from '../feed/';
 import {DietViewComponent} from '../diet-view/';
 import { PersonalComponent } from '../personal/';
 import { SessionDetailsComponent } from '../session-details/';
+
+declare var Stamplay;
 
 @Component({
   moduleId: module.id,
@@ -40,23 +42,23 @@ import { SessionDetailsComponent } from '../session-details/';
 
 })
 
-@Routes([
-  {path:'/session-details', component:SessionDetailsComponent}
-])
+
 
 export class HomeComponent implements OnInit {
-  @Input('activeUser') userDetails : any;
+  userInfo : any;
   a:number =0;
 
 
-  constructor(public _routesegment:RouteSegment, public router:Router) {
+  constructor(private route: ActivatedRoute, private router:Router) {
 
-//    this.user = this._routesegment.getParam('user');
+
   }
-  //menuopen:boolean=false;
+
 
   ngOnInit() {
-
+    Stamplay.User.currentUser().then((res)=>{
+      this.userInfo = res.user;
+    })
   }
  buttonclick(){
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
+import { Router } from '@angular/router';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 
@@ -6,33 +7,30 @@ import { PersonalPageComponent } from '../personal-page/';
 import { PreferencesComponent } from '../preferences/';
 import { UserFormsService } from '../';
 
+declare var Stamplay;
+
 @Component({
   moduleId: module.id,
   selector: 'user-personal-display',
   templateUrl: 'personal.component.html',
   styleUrls: ['personal.component.css'],
-  directives:[ PersonalPageComponent, MD_LIST_DIRECTIVES, MD_CARD_DIRECTIVES ]
+  directives:[  MD_LIST_DIRECTIVES, MD_CARD_DIRECTIVES ]
 })
 export class PersonalComponent implements OnInit {
-      UserPersonal = {
-        name: 'name',
-        dob : 'dob',
-        address: 'address'
+  @Input() userInfo : any;
+  personalformdata : any;
 
-    };
-    UserPreferences = {
-      healthcondition: 'healthcondition',
-      blogpostpreferences: 'blogpreferences'
-    };
-
-
-  //public formservice:UserFormsService
-  constructor() {}
+  constructor(private router : Router) {}
 
   ngOnInit() {
+    Stamplay.Object("userformpersonal").get({"person": this.userInfo.id}).then((res)=>{
+      this.personalformdata = res.data[0];
+    })
   //  this.displayInfo = this.formservice.getuserFormInfo();
   }
-
+  editinfo(){
+    this.router.navigate(['/personal']);
+  }
 
 
 }

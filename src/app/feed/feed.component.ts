@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
 import {MD_GRID_LIST_DIRECTIVES} from '@angular2-material/grid-list';
 import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
+import { ActivatedRoute } from '@angular/router';
 
 import { CommentDropComponent } from '../comment-drop/';
 
@@ -19,8 +20,8 @@ export class FeedComponent implements OnInit {
   letComment : boolean;
   blogpostresdata:any[];
   openComment:boolean;
-  constructor() {}
-
+  constructor(private route: ActivatedRoute) {}
+  @Input() userInfo : any;
   ngOnInit() {
     Stamplay.Object("blogposts").get({}).then((blogres)=>{
 

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Routes, Router } from '@angular/router';
+import { Component, OnInit , Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { SessionDetailsComponent } from '../session-details/';
 
@@ -11,10 +11,9 @@ declare var Stamplay;
   templateUrl: 'sessions.component.html',
   styleUrls: ['sessions.component.css']
 })
-//@Routes([
-//  {path : '/details', component : SessionDetailsComponent}
-//])
+
 export class SessionsComponent implements OnInit {
+  @Input() userInfo : any;
   filter:any;
   sessionresdata : any[];
 

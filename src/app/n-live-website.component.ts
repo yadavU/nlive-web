@@ -1,11 +1,10 @@
-import { Routes, ROUTER_DIRECTIVES, Router from "@angular/router";
+import { ROUTER_DIRECTIVES, Router, RouterConfig } from "@angular/router";
 import { Component, OnInit, EventEmitter, Input, Output, trigger, animate, state, style, transition } from "@angular/core";
 import { MD_CARD_DIRECTIVES } from "@angular2-material/card";
 import { MdIcon, MdIconRegistry } from "@angular2-material/icon";
-import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
+import { MD_TOOLBAR_DIRECTIVES } from '@angular2-material/toolbar';
 
-import { PersonalComponent } from './+personal';
+
 import { IntroComponent } from "./+intro/";
 import { HomeComponent } from "./+home/";
 
@@ -32,18 +31,15 @@ declare var Stamplay;
     ])
 
   ],*/
-  directives:[ROUTER_DIRECTIVES,IntroComponent, MD_LIST_DIRECTIVES, MD_SIDENAV_DIRECTIVES, MD_CARD_DIRECTIVES, MdIcon],
+  directives:[ROUTER_DIRECTIVES, MD_TOOLBAR_DIRECTIVES, MD_CARD_DIRECTIVES, MdIcon],
   providers:[MdIconRegistry]
 })
-@Routes([
-  {path:'/intro', component:IntroComponent},
-  {path:'/home/:user', component:HomeComponent},
-  {path: '/personal/:user', component: PersonalComponent}
 
-])
+
 export class NLiveWebsiteAppComponent implements OnInit{
-  showintro: boolean ;
-  showmain:boolean;// Change toolbar display when loggedIn
+  ToolbarDisplayText : string;
+  showintro: boolean= false ;
+  // Change toolbar display when loggedIn
   //logState: string = "loggedOut";//to animate the toolbar
   userInfo: any;
   displayName:string;
@@ -54,17 +50,31 @@ export class NLiveWebsiteAppComponent implements OnInit{
   }
 
   ngOnInit(){
-
+    Stamplay.User.currentUser().then((res)=>{
+      console.log(res.user._id);
+      if(res.user._id != undefined){
+        this.ToolbarDisplayText = "Hi" + res.user.displayName;
+      }
+      else{
+        this.ToolbarDisplayText = "Not Logged In or Registered";
+      }
+    });
   }
-  canActiate(){
 
+  ngOnChanges(){
+    Stamplay.User.currentUser().then((res)=>{
+
+      if(res.user._id != undefined){
+        this.ToolbarDisplayText = "Hi , " + res.user.displayName;
+      }
+      else{
+        this.ToolbarDisplayText = "Not Logged In or Registered";
+      }
+    });
   }
 
-  applytoolbar(){
-    console.log("recorded in main comp");
 
 
-  }
   check(){
     console.log("No user event recorded");
   }
@@ -77,7 +87,7 @@ export class NLiveWebsiteAppComponent implements OnInit{
   }
  showcurrentuser(){
    Stamplay.User.currentUser().then((res)=>{
-     console.log(res._id);
+     console.log(res);
    })
  }
 

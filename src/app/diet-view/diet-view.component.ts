@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {MD_GRID_LIST_DIRECTIVES} from '@angular2-material/grid-list';
 //import {InfiniteScroll} from 'angular2-infinite-scroll';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
@@ -6,7 +7,7 @@ import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
 import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
 import {MD_CHECKBOX_DIRECTIVES} from '@angular2-material/checkbox';
 
-
+declare var Stamplay;
 
 @Component({
   moduleId: module.id,
@@ -16,6 +17,7 @@ import {MD_CHECKBOX_DIRECTIVES} from '@angular2-material/checkbox';
   directives:[ MD_GRID_LIST_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_CARD_DIRECTIVES, MD_INPUT_DIRECTIVES, MD_CHECKBOX_DIRECTIVES]
 })
 export class DietViewComponent implements OnInit {
+  @Input() userInfo : any;
   usercategory:string = "obese";
   data:any;
 //    Day=[

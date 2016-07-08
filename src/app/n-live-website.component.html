@@ -1,18 +1,17 @@
-<div (nouser) = "check()" (founduser) = "showintro = false" >
+<div  >
   <md-toolbar >
-
-      <span ngIf="showintro" > <a [routerLink]="['/intro']"> <i class="material-icons enable">face</i> You are not registered, please sign in or sign up</a> </span>
-      <div *ngIf="showmain">
-        <span  > <a [routerLink]="['/home',displayName]"> Home </a> </span>
-        <span > <button md-button (click) = "logout()"> Logout </button> </span>
+      <span > <a [routerLink]="['/intro']"> <i class="material-icons enable">face</i> {{ToolbarDisplayText}}</a> </span>
+      <md-toolbar-row>
+        <span> <a [routerLink]="['/home']"> Home </a> </span>
+        <span> <button md-button (click) = "logout()"> Logout </button> </span>
         <span class="toolbardivider"></span>
-        <span > <a [routerLink]="['/personal', displayName]"> <i class="material-icons enable">Person </i></a></span>
-      </div>
+        <span > <a [routerLink]="['/personal']"> <i class="material-icons enable">Person </i></a></span>
+      </md-toolbar-row>
 </md-toolbar>
 </div>
 <button (click)="showcurrentuser()"></button>
 <div >
-  <router-outlet [activeUser]="userInfo" (loggedin)="applytoolbar()"></router-outlet>
+  <router-outlet  ></router-outlet>
 </div>
 <!--<md-toolbar>
 

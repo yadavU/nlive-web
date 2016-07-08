@@ -1,6 +1,20 @@
 
 
-  <personal-page [userPersonal]="UserPersonal"></personal-page>
+
+<md-card>
+  <md-card-title>
+    Personal Info
+  </md-card-title>
+  <md-list>
+  <md-list-item> My name is  {{personalformdata.firstName}} , {{personalformdata.lastName}}</md-list-item>
+  <md-list-item>Age : {{personalformdata.age}}</md-list-item>
+  <md-list-item>I stay at {{personalformdata.address}}</md-list-item>
+  <md-list-item>I am {{personalformdata.height}} cms tall</md-list-item>
+  <md-list-item>I currently wight {{personalformdata.weight}} </md-list-item>
+  <md-list-item>I can be contacted on {{personalformdata.phoneNumber}}</md-list-item>
+</md-list>
+</md-card>
+
   <!--<md-list>
     <md-list-item> {{UserPersonal.name}}</md-list-item>
     <md-list-item> {{UserPersonal.dob}}</md-list-item>
@@ -10,9 +24,12 @@
 
 
 <md-card>
+  <md-card-title>
+    Preferences
+  </md-card-title>
   <md-list>
-    <md-list-item> I have {{UserPreferences.healthcondition}}</md-list-item>
-    <md-list-item> I would prefer to get information regarding {{UserPreferences.blogpostpreferences}}</md-list-item>
+    <md-list-item> My DietPlan is setup according to my goal : {{userformpersonal.goalsChoice}}</md-list-item>
+
   </md-list>
 </md-card>
-<h3>Click on the top right button to edit the information and reload home</h3>
+<button (click)="editinfo()"></button>

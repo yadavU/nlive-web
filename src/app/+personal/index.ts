@@ -1,1 +1,1 @@
-export { PersonalComponent } from './personal.component';
+export { PersonalRoute } from './personal.component';

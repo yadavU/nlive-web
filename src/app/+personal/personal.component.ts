@@ -13,7 +13,7 @@ import { PreferencesComponent } from '../preferences/';
   directives : [ InfoComponent, PreferencesComponent , MD_TABS_DIRECTIVES ]
 })
 
-export class PersonalComponent implements OnInit {
+export class PersonalRoute implements OnInit {
   @Input() activeUser
   constructor() {}
 
