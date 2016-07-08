@@ -1,4 +1,4 @@
-import { Routes, ROUTER_DIRECTIVES, Router} from "@angular/router";
+import { Routes, ROUTER_DIRECTIVES, Router from "@angular/router";
 import { Component, OnInit, EventEmitter, Input, Output, trigger, animate, state, style, transition } from "@angular/core";
 import { MD_CARD_DIRECTIVES } from "@angular2-material/card";
 import { MdIcon, MdIconRegistry } from "@angular2-material/icon";
@@ -38,49 +38,47 @@ declare var Stamplay;
 @Routes([
   {path:'/intro', component:IntroComponent},
   {path:'/home/:user', component:HomeComponent},
-  {path: '/personal', component: PersonalComponent}
+  {path: '/personal/:user', component: PersonalComponent}
 
 ])
 export class NLiveWebsiteAppComponent implements OnInit{
-  showintro: boolean ;// Change toolbar display when loggedIn
+  showintro: boolean ;
+  showmain:boolean;// Change toolbar display when loggedIn
   //logState: string = "loggedOut";//to animate the toolbar
   userInfo: any;
   displayName:string;
   title = 'n-live-website works fine!';
-  @Output() nouser : EventEmitter<any> = new EventEmitter();
-  @Output() founduser : EventEmitter<any> = new EventEmitter();
+
   constructor( public router:Router){
 
   }
 
   ngOnInit(){
-    Stamplay.User.currentUser().then((res)=>{
-      this.userInfo = res.user;
 
-      if(this.userInfo == undefined)
-        {
-          this.nouser.emit(null);
-          }
-      else{
-        this.founduser.emit(null);
+  }
+  canActiate(){
 
-        console.log("executed else");
-      }
-    });
   }
 
-  loggedin(value){
+  applytoolbar(){
     console.log("recorded in main comp");
-    this.showintro=false;
-    console.log(value);
+
+
+  }
+  check(){
+    console.log("No user event recorded");
   }
 
   logout(){
-    this.showintro = true;
-    //Stamplay.User.logout();
+
+    Stamplay.User.logout();
     this.router.navigate(['/intro']);
     //this.toolbarstate= "loggedOut";
   }
-
+ showcurrentuser(){
+   Stamplay.User.currentUser().then((res)=>{
+     console.log(res._id);
+   })
+ }
 
 }

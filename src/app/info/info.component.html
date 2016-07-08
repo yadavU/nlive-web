@@ -1,4 +1,4 @@
-<form [ngFormModel]="infoForm" (submit)="submitinfoForm()">
+<form [ngFormModel]="infoForm" (submit)="submitinfoForm()" >
 
   <table>
     <tr>
@@ -16,13 +16,24 @@
     <span md-suffix> in cms </span>
   </md-input>
 <br>
-  <md-radio-group ngControl= "age">
-    <md-radio-button *ngFor="let age of ageOptions" [value]="age.value">
-      {{age.label}}
-    </md-radio-button>
-  </md-radio-group>
+  <md-card>
+    <md-card-title>
+      Your age
+    </md-card-title>
+    <md-card-actions>
+      <md-radio-group ngControl= "age">
+        <md-radio-button *ngFor="let age of ageOptions" [value]="age.value">
+          {{age.label}}
+        </md-radio-button>
+      </md-radio-group>
+    </md-card-actions>
+  </md-card>
 <br>
-  <select ngControl='weight'>
+  <md-card>
+    <md-card-title>
+      Weight
+    </md-card-title>
+    <select ngControl='weight'>
     <option value="lessthanfortyfive">  < 45 </option>
     <option value="fortytofifty"> 45-56 </option>
     <option value="fiftytosixty"> 57-68 </option>
@@ -30,13 +41,21 @@
     <option value="eightytoninty"> 81-95 </option>
     <option value="greaterthannintyfive"> > 95 </option>
   </select>
+</md-card>
 <br>
-  <md-radio-group ngControl = "goalsChoice">
-    <md-radio-button *ngFor = "let goal of goalsOptions" [value]= " goal.value ">
-      {{goal.label}}
-    </md-radio-button>
-  </md-radio-group>
+  <md-card>
+    <md-card-title>
+      Goal Choice
+    </md-card-title>
+    <md-card-actions>
+      <md-radio-group ngControl = "goalsChoice">
+        <md-radio-button *ngFor = "let goal of goalsOptions" [value]= " goal.value ">
+          {{goal.label}}
+        </md-radio-button>
+      </md-radio-group>
+    </md-card-actions>
+  </md-card>
 <br>
-  <button md-button type="submit" [disabled] = "letEdit"> That looks like me </button>
+  <button md-button type="submit" [disabled]="letEdit" > That looks like me </button>
 </form>
 <button md-button (click)="editForm()"> Let Me Edit </button>

@@ -25,6 +25,6 @@ md-toolbar {
 .hideLoggedOut{
   display: none;
 }*/
-md-toolbar .toolbardivider{
+span.toolbardivider{
   flex : 1 1 auto;
 }

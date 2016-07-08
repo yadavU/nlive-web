@@ -45,7 +45,7 @@ import { SessionDetailsComponent } from '../session-details/';
 ])
 
 export class HomeComponent implements OnInit {
-  @Input('user') userDetails : any;
+  @Input('activeUser') userDetails : any;
   a:number =0;
 
 

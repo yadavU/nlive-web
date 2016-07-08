@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {MD_TABS_DIRECTIVES} from '@angular2-material/tabs';
 
 
@@ -14,7 +14,7 @@ import { PreferencesComponent } from '../preferences/';
 })
 
 export class PersonalComponent implements OnInit {
-
+  @Input() activeUser
   constructor() {}
 
   ngOnInit() {

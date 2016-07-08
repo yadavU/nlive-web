@@ -24,9 +24,9 @@ export class IntroComponent implements OnInit {
 
   ngOnInit() {
   }
-  userloggedin(displayName){
-    this.loggedin.emit(displayName);
-    this.router.navigate(['/home',displayName]);
+  userloggedin(){
+    this.loggedin.emit(null);
+    this.router.navigate(['/']);
     console.log("recorded in intro component");
 
   }

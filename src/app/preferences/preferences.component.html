@@ -2,17 +2,33 @@
   <md-card-title> Preferences to define Content specific to you </md-card-title>
   <md-card-content>
     <form [ngFormModel]='preferencesForm' (submit)='submitpreferencesForm()'>
-      <md-radio-group ngControl='dietpref'>
+      <md-card>
+        <md-card-title>
+          Diet Preference
+        </md-card-title>
+        <md-radio-group ngControl='dietpref'>
         <md-radio-button value='pref1'> Preference 1 </md-radio-button>
         <md-radio-button value='pref2'> Preference 2 </md-radio-button>
       </md-radio-group>
+    </md-card>
 
-      <md-input ngControl='goal'><md-hint align="end"> You will soon have an option to enter a custom goal</md-hint> </md-input><br>
-      <md-radio-group ngControl='lifestyle'>
+      <md-card>
+        <md-card-title>
+          Enter custom goal
+        </md-card-title>
+        <md-input ngControl='goal'><md-hint align="end"> Option soon coming up</md-hint> </md-input><br>
+      </md-card>
+
+      <md-card>
+        <md-card-title>
+          Work rate
+        </md-card-title>
+        <md-radio-group ngControl='lifestyle'>
         <md-radio-button value="high">High work-rate</md-radio-button>
         <md-radio-button value="medium">Medium work-rate</md-radio-button>
         <md-radio-button value="low">Low work-rate</md-radio-button>
       </md-radio-group>
+    </md-card>
       <button md-button-rectangular type="submit">Submit</button>
     </form>
   </md-card-content>

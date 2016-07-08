@@ -1,14 +1,18 @@
 <md-grid-list cols="3" rows="10px">
-  <md-grid-tile *ngFor="let post of posts" [colspan]="post.cols" [rowspan]="post.rows"  >
+  <md-grid-tile *ngFor="let post of blogpostresdata" [colspan]="post.colspan" [rowspan]="post.rowspan"  >
     <md-card>
       <md-card-content>
-        {{post.content}}
-        <button md-button (click)="changeValue(post.id)">...</button>
-        <comment-sec *ngIf='post.showComment'></comment-sec>
+        {{post.textcontent}}
+        <!--<comment-drop *ngIf="post.showComment"  ></comment-drop>-->
+
       </md-card-content>
       <md-card-actions>
-        <button md-button (click)="upvote(post)"> Up Vote </button>
-        <button md-button (click)="comment(post)"> Comment </button>
+        <button md-button (click)="upvote(post._id)"> Up Vote </button>
+        <button md-button (click)="post.letComment = !post.letComment"> Comment </button>
+        <div *ngIf="post.letComment">
+          <md-input [(ngModel)]="commentText" (keyup.enter)="postComment(post._id)">
+          </md-input>
+        </div>
       </md-card-actions>
     </md-card>
   </md-grid-tile>
