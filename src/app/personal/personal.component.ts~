@@ -21,7 +21,7 @@ export class PersonalComponent implements OnInit {
   constructor(private router : Router) {}
 
   ngOnInit() {
-    Stamplay.Object("userformpersonal").get({person: this.userInfo.id}).then((res)=>{
+    Stamplay.Object("userformpersonal").get({"person": this.userInfo.id}).then((res)=>{
       this.personalformdata = res.data[0];
     })
   //  this.displayInfo = this.formservice.getuserFormInfo();
