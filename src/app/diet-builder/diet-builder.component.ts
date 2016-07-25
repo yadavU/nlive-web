@@ -3,6 +3,8 @@ import {MD_GRID_LIST_DIRECTIVES} from '@angular2-material/grid-list';
 import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
 
+declare var require;
+
 @Component({
   moduleId: module.id,
   selector: 'app-diet-builder',

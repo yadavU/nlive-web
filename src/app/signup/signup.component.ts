@@ -4,6 +4,7 @@ import {FormBuilder,ControlGroup} from '@angular/common';
 import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
 
 declare var Stamplay;
+declare var require;
 
 @Component({
   moduleId: module.id,

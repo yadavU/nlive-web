@@ -1,20 +1,20 @@
 import { Component, OnInit , Input } from '@angular/core';
 import {FormBuilder,ControlGroup} from '@angular/common';
 import  { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
-import { MD_RADIO_DIRECTIVES, MdRadioDispatcher } from '@angular2-material/radio';
+import { MD_RADIO_DIRECTIVES } from '@angular2-material/radio';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 
 import { UserFormsService } from '../';
 
 declare var Stamplay;
+declare var require;
 
 @Component({
   moduleId: module.id,
   selector: 'user-info',
   templateUrl: 'info.component.html',
   styleUrls: ['info.component.css'],
-  directives:[MD_INPUT_DIRECTIVES, MD_RADIO_DIRECTIVES , MD_CARD_DIRECTIVES],
-  providers : [MdRadioDispatcher]
+  directives:[MD_INPUT_DIRECTIVES, MD_RADIO_DIRECTIVES , MD_CARD_DIRECTIVES]
 })
 export class InfoComponent implements OnInit {
   @Input() userid;

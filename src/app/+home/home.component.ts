@@ -10,6 +10,7 @@ import { PersonalComponent } from '../personal/';
 import { SessionDetailsComponent } from '../session-details/';
 
 declare var Stamplay;
+declare var require;
 
 @Component({
   moduleId: module.id,

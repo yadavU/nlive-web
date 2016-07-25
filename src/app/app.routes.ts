@@ -1,5 +1,7 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
+declare var require;
+
 import { IntroComponent } from './+intro/';
 import { HomeComponent } from './+home/';
 import { PersonalRoute } from './+personal';

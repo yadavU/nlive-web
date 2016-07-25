@@ -17,7 +17,7 @@ export class LoginAuth implements CanActivate{
     //},(err)=>{
     //  return false;
     //});
-    this.router.navigate(['/intro']);
+    // this.router.navigate(['/intro']);
     //return false;
   }
 }

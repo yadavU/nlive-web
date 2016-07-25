@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CommentDropComponent } from '../comment-drop/';
 
 declare var Stamplay;
+declare var require;
 
 @Component({
   moduleId: module.id,

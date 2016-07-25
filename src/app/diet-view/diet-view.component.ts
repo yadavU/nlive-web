@@ -8,6 +8,7 @@ import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
 import {MD_CHECKBOX_DIRECTIVES} from '@angular2-material/checkbox';
 
 declare var Stamplay;
+declare var require;
 
 @Component({
   moduleId: module.id,

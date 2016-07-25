@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var require;
+
 @Component({
   moduleId: module.id,
   selector: 'app-session-details',

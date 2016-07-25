@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
+
+declare var require;
+
 @Component({
   moduleId: module.id,
   selector: 'personal-page',

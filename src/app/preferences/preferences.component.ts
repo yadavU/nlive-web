@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, ControlGroup} from '@angular/common';
 import  { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
-import { MD_RADIO_DIRECTIVES, MdRadioDispatcher } from '@angular2-material/radio';
+import { MD_RADIO_DIRECTIVES} from '@angular2-material/radio';
 
 declare var Stamplay;
+declare var require;
 
 @Component({
   moduleId: module.id,
   selector: 'app-preferences',
   templateUrl: 'preferences.component.html',
   styleUrls: ['preferences.component.css'],
-  directives : [MD_RADIO_DIRECTIVES, MD_INPUT_DIRECTIVES],
-  providers : [MdRadioDispatcher]
+  directives : [MD_RADIO_DIRECTIVES, MD_INPUT_DIRECTIVES]
 })
 export class PreferencesComponent implements OnInit {
   preferencesForm:ControlGroup;

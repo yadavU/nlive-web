@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
 import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
 
+declare var require;
+
 @Component({
   moduleId: module.id,
   selector: 'comment-drop',

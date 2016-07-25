@@ -5,6 +5,7 @@ import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 
 declare var Stamplay;
+declare var require;
 
 @Component({
   moduleId: module.id,

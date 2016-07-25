@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { SessionDetailsComponent } from '../session-details/';
 
 declare var Stamplay;
+declare var require;
 
 @Component({
   moduleId: module.id,

@@ -6,6 +6,7 @@ import { MD_TABS_DIRECTIVES } from '@angular2-material/tabs';
 import { LoginComponent } from '../login/';
 import { SignupComponent } from '../signup/';
 
+declare var require;
 
 @Component({
   moduleId: module.id,

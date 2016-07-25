@@ -5,6 +5,8 @@ import {MD_TABS_DIRECTIVES} from '@angular2-material/tabs';
 import { InfoComponent } from '../info/';
 import { PreferencesComponent } from '../preferences/';
 
+declare var require;
+
 @Component({
   moduleId: module.id,
   selector: 'app-personal',

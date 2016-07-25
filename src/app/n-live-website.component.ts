@@ -9,6 +9,7 @@ import { IntroComponent } from "./+intro/";
 import { HomeComponent } from "./+home/";
 
 declare var Stamplay;
+declare var require;
 
 @Component({
   moduleId: module.id,

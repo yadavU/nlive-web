@@ -6,6 +6,7 @@ import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { UserFormsService } from '../';
 
 declare var Stamplay;
+declare var require;
 
 @Component({
   moduleId: module.id,
